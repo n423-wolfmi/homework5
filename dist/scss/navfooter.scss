@@ -3,10 +3,16 @@
     height: 70px;
     text-align: left;
     padding: 20px $pagePadSize;
-    border-bottom: 1px solid #000;
     background-color: $primaryColor;
+
     h1 {
         font-size: 22px;
+        border-right: 2px solid $tertiaryColor;
+        border-left: 2px solid $tertiaryColor;
+        display: inline;
+        padding: 7px;
+        border-radius: 5px;
+        color: $tertiaryColor;
     }
 }
 
@@ -15,6 +21,5 @@
     height: 70px;
     text-align: center;
     padding-top: 25px;
-    border-top: 1px solid #000;
     background-color: $primaryColor;
 }
