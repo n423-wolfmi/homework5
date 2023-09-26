@@ -1,23 +1,84 @@
-#display {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    padding: 0 150px;
+#mainPage {
+    background-color: $secondaryColor;
+    flex: 1;
+    padding-bottom: 20px;
+    min-height: calc( 100vh - 140px); //viewheight - header and footer to keep footer at bottom
 
-    .albumItem {
-        border: 1px solid #000;
+    #filter {
+        padding: 10px $pagePadSize;
+        margin-bottom: 20px;
+        background-color: #fff;
         display: flex;
-        flex: 1 0 33%;
-        align-items: center;
-        justify-content: space-evenly;
-
-        .albumInfo {
-            flex: .8;
-        }
-
-        img {
-            width: 35%;
+        
+        button {
+            margin-right: 5%;
+            padding: 5px 25px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 16px;
+            background-color: #fff;
+            border: 1px solid #000;
+            border-radius: 10px;
+            cursor: pointer;
         }
     }
+    
+    #display {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 $pagePadSize;
+        border-radius: 3px;
+        background-color: $primaryColor;
+    
+        .albumItem {
+            display: flex;
+            flex: 0 0 30.5%;
+            justify-content: space-between;
+            background-color: #ffffff;
+            margin: 15px;
+            border-radius: 5px;
+    
+            .albumInfo {
+                width: 60%;
+                height: 100%;
+                padding-top: 10px;
+                padding-right: 3px;
+                
+                p {
+                    margin-bottom: 8px;
+                }
+            }
+    
+            img {
+                width: 35%;
+                border-radius: 5px 0 0 5px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1370px) {  
+    #mainPage {
+        #display {
+            .albumItem {
+                flex: 0 0 45%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 810px) {
+    #mainPage {
+        #filter {
+            flex-direction: column;
+            button {
+                margin-bottom: 10px;
+                width: 150px;
+            }
+        }
+        #display {
+            .albumItem {
+                flex: 0 0 90%;
+            }
+        }
+    }    
 }

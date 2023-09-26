@@ -8,17 +8,19 @@
     <link rel="shortcut icon" href="#" />
   </head>
   <body>
-    <h1>Albums</h1>
-    
-        <div id="radio">
-            <input type="radio" id="rock" value="Rock">
-            <label for="Rock">Rock</label>
-            <input type="radio" id="metal" value="Metal">
-            <label for="Metal">Metal</label>
-            <input type="radio" id="folk" value="Folk">
-            <label for="Folk">Folk</label>
-        </div>
-        <div id="display"></div>
+    <nav id="nav"><h1>Albums Firebase DB</h1></nav>
+
+    <div id="mainPage">
+      <div id="filter">
+        <button id="allBtn">All</button>
+        <button id="rock" value="Rock">Rock</button>
+        <button id="metal" value="Metal">Metal</button>
+        <button id="folk" value="Folk">Folk</button>
+      </div>
+      <div id="display"></div>
+    </div>
+      
+    <div id="footer"><p>Matthew Wolf &copy;2023 (not really copyrighted)</p></div>
     
     <script src="lib/jquery-3.7.1.js"></script>
     <script src="app/app.js"></script>
