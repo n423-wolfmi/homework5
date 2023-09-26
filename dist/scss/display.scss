@@ -1,0 +1,23 @@
+#display {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 0 150px;
+
+    .albumItem {
+        border: 1px solid #000;
+        display: flex;
+        flex: 1 0 33%;
+        align-items: center;
+        justify-content: space-evenly;
+
+        .albumInfo {
+            flex: .8;
+        }
+
+        img {
+            width: 35%;
+        }
+    }
+}

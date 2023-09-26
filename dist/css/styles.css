@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+#display {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 0 150px;
+}
+#display .albumItem {
+  border: 1px solid #000;
+  display: flex;
+  flex: 1 0 33%;
+  align-items: center;
+  justify-content: space-evenly;
+}
+#display .albumItem .albumInfo {
+  flex: 0.8;
+}
+#display .albumItem img {
+  width: 35%;
+}
+
+/*# sourceMappingURL=styles.css.map */
