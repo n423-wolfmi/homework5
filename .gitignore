@@ -4,3 +4,4 @@ dist/lib
 .vscode
 jsconfig.json
 package.json
+src/config.js

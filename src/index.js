@@ -8,15 +8,7 @@ import {
   query,
   where,
 } from "firebase/firestore";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyABSUfYuSKFxvkQGqSkG_QSrnEmHyStWbU",
-  authDomain: "n423-data-mattwolf.firebaseapp.com",
-  projectId: "n423-data-mattwolf",
-  storageBucket: "n423-data-mattwolf.appspot.com",
-  messagingSenderId: "452144208034",
-  appId: "1:452144208034:web:ffcc6447c9cd6c56969ffb",
-};
+import { firebaseConfig } from "./config";
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -34,8 +26,10 @@ folkBtn.addEventListener("click", filterGenre)
 async function getAlbums() {
   document.getElementById("display").innerHTML = "";
 
+  //get all documents from "Albums" collection
   const querySnapshot = await getDocs(collection(db, "Albums"));
 
+  //for each document, add it to the page
   querySnapshot.forEach((doc) => {
     document.getElementById("display").innerHTML += `
       <div class="albumItem">
@@ -53,15 +47,17 @@ async function getAlbums() {
 async function filterGenre(e) {
   document.getElementById("display").innerHTML = "";
 
-  let genre = e.currentTarget.value
+  let genre = e.currentTarget.value //get genre from button value
 
+  //equivalent to SQL query: SELECT * FROM Albums WHERE genre='metal'
   const q = query(
     collection(db, "Albums"),
-    where("genre", "==", genre)
+    where("genre", "==", genre) 
   );
 
-  const querySnapshot = await getDocs(q);
+  const querySnapshot = await getDocs(q); //wait for the queried items to return
 
+  //for each item, display on the page
   querySnapshot.forEach((doc) => {
     document.getElementById("display").innerHTML += `
       <div class="albumItem">
@@ -77,8 +73,5 @@ async function filterGenre(e) {
 }
 
 $(document).ready(() => {
-  getAlbums();
+  getAlbums(); //display items on page load
 });
-
-//load all albums on startup
-//have a way to filter albums in a specific genre
